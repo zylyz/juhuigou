@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="Generator" content="Sublime Text3">
+    <meta name="Author" content="">
+    <meta name="website" content="">
+    <meta name="Description" content="zy">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/backpwd3.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $('.gain').click(function(){
+                console.log($('#amend').val());
+                console.log($('#amend1').val());
+                console.log($('#amend2').val());
+console.log(a(0))
+                // data = JSON.parse(data);
+              // console.log(data);
+              $.ajax({
+            type:"get",
+            dataType:"text",
+            url:"http://juhuituan.boguyuan.com/juhuituan/loginApp?action=pwd&acode=1&uid="+a(0)+"&pwd="+$('#amend1').val()+"&repwd="+$('#amend2').val()+"",
+            error:function(XMLHttpRequest,textStatus,errorThrown){},
+            success:function(data){
+              // alert("修改成功")
+              location.href = "login.html"
+            }
+
+        })
+        function a(a){
+        return window.location.href.split('uid=')[1].split('&')[a];
+             }
+              })
+        
+      })  
+    </script>
+</head>
+<body>
+    <div class="login">
+    	<div class="header">
+    		<span><</span>
+    		<span><img src="img/nav_icon.png"></span>
+    		<span style="position: absolute;left: 40%;">找回密码</span>
+    	</div>
+    	<div class="back_content">
+            <img src="img/find_pwd_3.png">
+        </div>
+      <div class="shuru">
+            <div class="input_s">
+                <input type="text" placeholder="请输入获取验证码的手机号" id="amend" >
+                <div class="backpwd_xian"></div>
+                <input type="text" placeholder="请输入密码" id="amend1" >
+                <div class="backpwd_xian1"></div>
+                <input type="text" placeholder="请重复输入密码" id="amend2" >
+                <div class="backpwd_xian2"></div>
+            </div> 
+            <div class="gain">
+              更改密码
+            </div>
+      </div>
+        
+    </div>
+</body>
+</html>

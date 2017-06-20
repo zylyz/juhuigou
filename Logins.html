@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="Generator" content="Sublime Text3">
+    <meta name="Author" content="">
+    <meta name="website" content="">
+    <meta name="Description" content="zy">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" type="text/css" href="css/Logins.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<!--     <script type="text/javascript">
+    $(function(){
+        $('#login_btn').click(function(){
+            $('#user').val();
+            $('#secret').val();
+            console.log($('#user').val());
+            console.log($('#secret').val());
+
+            $.ajax({
+             type: "post", //用POST方式传输
+         　　dataType: "text", //数据格式:JSON
+         　　url: "http://juhuituan.boguyuan.com/juhuituan/loginApp?action=login&acode=1&un="+$('#user').val()+"&pwd="+$('#secret').val()+"",
+             error: function (XMLHttpRequest, textStatus, errorThrown) { },
+             success: function (data){
+                data  = JSON.parse(data);
+                console.log(data);
+                if (data.code==100&&data.msg=="登录成功！") {
+                      alert('登陆成功');
+                      location.href = 'login.html';
+                }else{
+                    alert('请重新输入');
+                }
+             }
+            })
+        })
+        $('#rigister_btn').click(function(){
+            location.href = 'rigister.html';
+        })
+        })
+    </script> -->
+</head>
+<body>
+    <div class="login">
+        <div>
+            <span><</span>
+            <span><img src="img/nav_icon.png"></span>
+        </div>
+        "我的"
+    </div>
+</body>
+</html>

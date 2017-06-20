@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="Generator" content="Sublime Text3">
+    <meta name="Author" content="">
+    <meta name="website" content="">
+    <meta name="Description" content="zy">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/backpwd.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.gain').click(function(){
+                function a(a){
+        return window.location.href.split('mcode=')[1].split('&')[a];
+            }
+             function b(a){
+        return window.location.href.split('uid=')[1].split('&')[a];
+            }
+              console.log(a(0));
+              console.log(b(0));
+
+                if ($('#amend').val()===a(0)) {
+                    location.href = "backpwd3.html?uid="+b(0)+"";
+                }else{
+                    alert("验证码错误")
+                }
+            })
+            
+        })
+
+    </script>
+
+</head>
+<body>
+    <div class="login">
+    	<div class="header">
+    		<span><</span>
+    		<span><img src="img/nav_icon.png"></span>
+    		<span style="position: absolute;left: 40%;">找回密码</span>
+    	</div>
+    	<div class="back_content">
+        <img src="img/find_pwd_2.png">
+      </div>
+      <div class="shuru">
+        <input type="text" placeholder="请输入短信中的验证码" id="amend" >
+        <div class="backpwd_xian"></div>
+        <div class="gain">
+          提交验证码
+        </div>
+      </div>
+        
+    </div>
+</body>
+</html>

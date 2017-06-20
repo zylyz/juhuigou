@@ -1,0 +1,52 @@
+.back_content{
+	/*width: 100%;*/
+	height:120px;
+	background-color: #ccc; 
+	position: relative;
+}
+.back_content img{
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	left: 10%;
+	top: 10%;
+}
+.shuru{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#amend{
+	width: 80%;
+	height: 35px;
+	border:none;
+	outline: none;
+	font-size: 1.2em;
+	position: absolute;
+	left: 6%;
+	top: 20px;
+}
+.backpwd_xian{
+	border: 2px solid red;
+	border-top: none; 
+	height: 4px;
+	width: 92%;
+	position: absolute;
+	left: 5%;
+	top: 50px;
+}
+.gain{
+	width: 95%;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 6px;
+	text-align: center;
+	color: white;
+	border:1px solid red;
+	background-color: red;
+	position: absolute;
+	left:3%;
+	top: 70px;
+    cursor: pointer;
+
+}

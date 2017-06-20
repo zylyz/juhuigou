@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="Generator" content="Sublime Text3">
+    <meta name="Author" content="">
+    <meta name="website" content="">
+    <meta name="Description" content="zy">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/backpwd.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+       $(function(){
+        $('.gain').click(function(){
+            console.log($('#amend').val());
+             function a(a){
+                   return window.location.href.split('?')[1].split('=')[a];
+             } 
+            $.ajax({
+               type:"get",
+               dataType:"text",
+               url:"http://juhuituan.boguyuan.com/juhuituan/smsApp?action=sendCode&acode=1&un="+$('#amend').val()+"&loainType=1&type=1",
+               error:function(XMLHttpRequest,textStatus,errorThrown){},
+               success:function(date){
+                date = JSON.parse(date);
+                $.ajax({
+                  type:"get",
+                  dataType:"text",
+                  url:"http://juhuituan.boguyuan.com/juhuituan/loginApp?action=reg&acode=1&un="+$('#amend').val()+"&mcode="+date.sdCode+"&loainType=1&type=1",
+                  error:function(XMLHttpRequest,textStatus,errorThrown){},
+                  success:function(data){
+                    data = JSON.parse(data);
+                    console.log(data);
+                    console.log(date);
+                    location.href = "backpwd2.html?uid="+data.data.uid+"&mcode="+date.sdCode+""
+                  }
+                })
+
+                 
+               }
+
+            })
+
+        })
+
+       }) 
+
+    </script>
+</head>
+<body>
+    <div class="login">
+    	<div class="header">
+    		<span><</span>
+    		<span><img src="img/nav_icon.png"></span>
+    		<span style="position: absolute;left: 40%;">找回密码</span>
+    	</div>
+    	<div class="back_content">
+        <img src="img/find_pwd_1.png">
+      </div>
+      <div class="shuru">
+        <input type="text" placeholder="请输入获取验证码的手机号" id="amend" >
+        <div class="backpwd_xian"></div>
+        <div class="gain">
+          获取验证码
+        </div>
+      </div>
+        
+    </div>
+</body>
+</html>
